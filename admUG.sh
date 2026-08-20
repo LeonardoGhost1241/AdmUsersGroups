@@ -104,7 +104,8 @@ group(){
 				gCreate
 				;;				
 			"Listar grupos") 
-				gShow 
+		
+        gShow 
 				;;
 			"Actualizar grupo")
 				groupModify	
