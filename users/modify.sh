@@ -1,19 +1,67 @@
 #!/bin/bash
 
-#Verificar si existe el usuario
+source /home/leonardo/Documents/AdmUsersGroups/lib/gfunctions.sh
 
 read -p "Ingresa cuenta de usuario: " userShow
 
-#if [[ ! -e "/AdmUsersGroups/lib/existUser.sh" ]]; then
-#    echo "[!] Archivo existUser.sh no encontrado"
-#    exit 1 
-#fi
+userExistCreate $userShow
 
-#. /home/leonardo/Documents/AdmUsersGroups/lib/existUser.sh $userShow
 
-source ./variables_show.sh $userShow
+opc=("Cambiar Nombre" "Cambiar id de usuario" "Cambiar id degrupo" "Cambiar/Eliminar/Agregar grupos" "Directorio principal" "Shell" "Comentario" "Estado de la cuenta" "Expiracion")
 
-echo "$id_user"
+
+echo "Nombre: $name"
+echo "id: $id_user"
+echo "id de grupo: $id_group"
+echo "Grupos: $allGroups"
+echo "Directorio principal: $dirUser"
+echo "Shell: $typeShell"
+echo "Comantario: $comments"
+echo "Estado de la cuenta: $accountStatus"
+echo "Expiracion: $dateExpire"
+
+
+
+nameFunc(){
+    read -p "Nuevo nombre: " newName
+
+
+
+}
+
+
+
+PS3="> "
+select var in "${opc[@]}"; do
+    case $var in
+        "Cambiar Nombre")
+            echo "efvf"
+            ;;
+        "Cambiar id de usuario") 
+            echo "dos"
+            ;;
+        "Cambiar id degrupo")
+            echo ""
+            ;;
+        "Cambiar/Eliminar/Agregar grupos")
+            ;;
+        "Directorio principal")
+            ;;
+        "Shell")
+            ;;
+        "Comentario")
+            ;;
+        "Estado de la cuenta")
+            ;;
+        "Expiracion")
+            ;;
+        *)
+            echo "Opcion no encontrada"
+            ;;
+    esac
+done
+
+
 
 
 
